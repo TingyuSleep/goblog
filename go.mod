@@ -1,4 +1,5 @@
-module github.com/TingyuSleep/goblog
+//module github.com/TingyuSleep/goblog
+module goblog
 
 go 1.22.0
 
