@@ -7,8 +7,6 @@ import (
 	"goblog/bootstrap"
 	"goblog/pkg/database"
 	"goblog/pkg/logger"
-	"goblog/pkg/route"
-	"goblog/pkg/types"
 	"html/template"
 	"net/http"
 	"net/url"
@@ -112,6 +110,7 @@ func articlesEditHandler(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
+/*
 func articlesShowHandler(w http.ResponseWriter, r *http.Request) {
 
 	// 1. 获取 URL 参数
@@ -144,6 +143,7 @@ func articlesShowHandler(w http.ResponseWriter, r *http.Request) {
 		logger.LogError(err)
 	}
 }
+*/
 
 func articlesUpdateHandler(w http.ResponseWriter, r *http.Request) {
 
@@ -442,6 +442,9 @@ func getRouteVariable(parameterName string, r *http.Request) string {
 func main() {
 	database.Initialize()
 	db = database.DB
+
+	bootstrap.SetupDB()
+	router = bootstrap.SetupRoute()
 
 	router = bootstrap.SetupRoute()
 
